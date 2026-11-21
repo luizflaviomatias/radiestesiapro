@@ -77,13 +77,15 @@
     footer { border-top: 1px solid var(--borda); padding: 28px 0 40px; text-align: center; font-size: .92rem; color: var(--texto-suave); }
     footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-bottom: 10px; }
   </style>
+  <link rel="stylesheet" href="tutoriais/tutorial.css">
+  <script type="module" src="tutoriais/tutorial.js"></script>
 </head>
 <body>
   <header>
     <div class="largura">
       <a class="marca" href="#"><img src="icone-192.png" alt="" width="36" height="36"><span>Radiestesia<b>Pro</b></span></a>
       <nav aria-label="Seções">
-        <a href="#recursos">Recursos</a><a href="#como">Como começar</a><a href="#preco">Preço</a><a href="#perguntas">Perguntas</a>
+        <a href="#recursos">Recursos</a><a href="#como">Como começar</a><a href="#tutorial">Tutorial</a><a href="#preco">Preço</a><a href="#perguntas">Perguntas</a>
       </nav>
       <a class="botao botao--principal" href="#baixar" style="min-height:40px;padding:0 16px">Baixar</a>
     </div>
@@ -152,6 +154,52 @@
           <li><span><b>Pague no cartão ou no Pix</b> e volte ao app. Toque em <b>Já assinei</b> e pronto.</span></li>
           <li><span><b>Versões novas chegam sozinhas</b>: ao abrir, o app confere se há atualização e baixa para você.</span></li>
         </ol>
+      </div>
+    </section>
+
+    <section id="tutorial" aria-labelledby="titulo-tutorial" data-tutorial>
+      <div class="largura">
+        <h2 id="titulo-tutorial">Veja o app funcionando</h2>
+        <p class="subtitulo">Em um minuto e meio: do cadastro do consulente ao faturamento, no app de verdade.</p>
+        <div class="tutorial">
+          <figure class="tutorial__video">
+            <video controls preload="none" playsinline width="720" height="1558" poster="tutoriais/radiestesiapro-tutorial-poster.jpg"
+              aria-labelledby="titulo-tutorial" aria-describedby="nota-tutorial">
+              <source src="tutoriais/radiestesiapro-tutorial.webm" type='video/webm; codecs="vp9"'>
+              <source src="tutoriais/radiestesiapro-tutorial.mp4" type="video/mp4">
+              <track kind="captions" src="tutoriais/radiestesiapro-tutorial.vtt" srclang="pt-BR" label="Português (Brasil)" default>
+              <track kind="chapters" src="tutoriais/radiestesiapro-tutorial-capitulos.vtt" srclang="pt-BR" label="Capítulos">
+              <a href="tutoriais/radiestesiapro-tutorial.mp4">Baixar o vídeo (MP4)</a>
+            </video>
+          </figure>
+          <div>
+            <h3>Capítulos</h3>
+            <ol class="tutorial__capitulos">
+              <li><button type="button" data-tempo="4.3"><span class="tutorial__tempo">0:04</span> Cadastre o consulente</button></li>
+              <li><button type="button" data-tempo="18.7"><span class="tutorial__tempo">0:18</span> Registre um tratamento</button></li>
+              <li><button type="button" data-tempo="52.2"><span class="tutorial__tempo">0:52</span> Acompanhe os pendentes</button></li>
+              <li><button type="button" data-tempo="59.1"><span class="tutorial__tempo">0:59</span> A ficha do consulente</button></li>
+              <li><button type="button" data-tempo="71.6"><span class="tutorial__tempo">1:11</span> Faturamento</button></li>
+              <li><button type="button" data-tempo="80.1"><span class="tutorial__tempo">1:20</span> Tema e backup</button></li>
+            </ol>
+            <details class="tutorial__transcricao">
+              <summary>Ler a transcrição</summary>
+              <h4>Cadastre o consulente</h4>
+              <p>Tudo começa pelo menu ☰. Abra Consulentes. Preencha nome, WhatsApp, data de nascimento e a queixa principal.</p>
+              <h4>Registre um tratamento</h4>
+              <p>Na tela Início, toque em Novo Tratamento. Escolha o consulente. Marque os protocolos do catálogo ou adicione gráficos avulsos. Para cada gráfico, escolha qual é e quando começa e termina a emissão. O app calcula o término do pacote pelo último gráfico. Dê um título, o valor fechado e, se quiser, a devolutiva para o consulente.</p>
+              <h4>Acompanhe os pendentes</h4>
+              <p>Na tela Início aparecem os tratamentos com gráfico em emissão no dia. Os pontos no calendário marcam os dias com tratamento ativo. Toque nos dias para filtrar.</p>
+              <h4>A ficha do consulente</h4>
+              <p>Em Visualizar Tratamentos ficam os pacotes, os gráficos e o tempo que falta de cada um. Daqui você manda a devolutiva pelo WhatsApp, gera o PDF ou encerra um gráfico antes do prazo.</p>
+              <h4>Faturamento</h4>
+              <p>Em Faturamento, veja o total do dia, da semana ou do mês e o ticket médio.</p>
+              <h4>Tema e backup</h4>
+              <p>No menu também ficam o tema claro ou escuro, as Configurações e o Backup. Os dados ficam guardados no aparelho: faça backup com frequência.</p>
+            </details>
+            <p class="tutorial__nota" id="nota-tutorial">Vídeo sem som, com legendas. Consulente e valores de exemplo.</p>
+          </div>
+        </div>
       </div>
     </section>
 
