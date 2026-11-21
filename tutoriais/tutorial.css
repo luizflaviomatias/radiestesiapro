@@ -1,0 +1,41 @@
+/* Seção Tutorial: vídeo em tela de celular, capítulos e transcrição. As cores vêm das variáveis da página. */
+/* O topo da página é fixo: o link do menu não deixa o título da seção escondido atrás dele. */
+[data-tutorial] { scroll-margin-top: 72px; }
+.tutorial {
+  --tutorial-destaque: var(--destaque);
+  --tutorial-borda: var(--borda);
+  --tutorial-moldura: #533343;
+  --tutorial-texto-2: var(--texto-suave);
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: 36px;
+}
+.tutorial__video { margin: 0; justify-self: center; width: 100%; max-width: min(360px, calc(80vh * 720 / 1558)); }
+.tutorial__video video {
+  display: block; width: 100%; height: auto; border-radius: 28px; background: #000;
+  border: 6px solid var(--tutorial-moldura); box-shadow: 0 18px 40px rgba(0, 0, 0, .18);
+}
+.tutorial__video video:focus-visible { outline: 3px solid var(--tutorial-destaque); outline-offset: 3px; }
+.tutorial h3 { margin: 0 0 12px; font-size: 1.3rem; }
+.tutorial__capitulos { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 6px; }
+.tutorial__capitulos button {
+  display: flex; align-items: center; gap: 14px; width: 100%; min-height: 44px; padding: 10px 14px;
+  border: 1px solid var(--tutorial-borda); border-radius: 10px; background: transparent; color: inherit;
+  font: inherit; text-align: left; cursor: pointer;
+}
+.tutorial__capitulos button:hover, .tutorial__capitulos button[aria-current="true"] { border-color: var(--tutorial-destaque); }
+.tutorial__capitulos button[aria-current="true"] { font-weight: 600; }
+.tutorial__capitulos button:focus-visible { outline: 3px solid var(--tutorial-destaque); outline-offset: 2px; }
+.tutorial__tempo { min-width: 3.2ch; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--tutorial-destaque); }
+.tutorial__transcricao summary { display: flex; align-items: center; min-height: 44px; font-weight: 600; cursor: pointer; }
+.tutorial__transcricao summary:focus-visible { outline: 3px solid var(--tutorial-destaque); outline-offset: 2px; }
+.tutorial__transcricao h4 { margin: 16px 0 4px; font-size: 16px; }
+.tutorial__transcricao p { margin: 0; color: var(--tutorial-texto-2); }
+.tutorial__nota { margin-top: 16px; font-size: 14px; color: var(--tutorial-texto-2); }
+@media (max-width: 760px) {
+  .tutorial { grid-template-columns: 1fr; gap: 32px; }
+  .tutorial__video { max-width: min(320px, calc(75vh * 720 / 1558)); }
+}
+@media (prefers-reduced-motion: reduce) { .tutorial__video video { box-shadow: none; } }
